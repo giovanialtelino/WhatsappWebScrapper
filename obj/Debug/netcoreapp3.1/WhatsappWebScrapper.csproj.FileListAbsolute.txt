@@ -1,0 +1,16 @@
+/home/giovani/Documents/WhatsappWebScrapper/bin/Debug/netcoreapp3.1/WhatsappWebScrapper
+/home/giovani/Documents/WhatsappWebScrapper/bin/Debug/netcoreapp3.1/WhatsappWebScrapper.deps.json
+/home/giovani/Documents/WhatsappWebScrapper/bin/Debug/netcoreapp3.1/WhatsappWebScrapper.runtimeconfig.json
+/home/giovani/Documents/WhatsappWebScrapper/bin/Debug/netcoreapp3.1/WhatsappWebScrapper.runtimeconfig.dev.json
+/home/giovani/Documents/WhatsappWebScrapper/bin/Debug/netcoreapp3.1/WhatsappWebScrapper.dll
+/home/giovani/Documents/WhatsappWebScrapper/bin/Debug/netcoreapp3.1/WhatsappWebScrapper.pdb
+/home/giovani/Documents/WhatsappWebScrapper/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/home/giovani/Documents/WhatsappWebScrapper/bin/Debug/netcoreapp3.1/WebDriver.dll
+/home/giovani/Documents/WhatsappWebScrapper/obj/Debug/netcoreapp3.1/WhatsappWebScrapper.csprojAssemblyReference.cache
+/home/giovani/Documents/WhatsappWebScrapper/obj/Debug/netcoreapp3.1/WhatsappWebScrapper.AssemblyInfoInputs.cache
+/home/giovani/Documents/WhatsappWebScrapper/obj/Debug/netcoreapp3.1/WhatsappWebScrapper.AssemblyInfo.cs
+/home/giovani/Documents/WhatsappWebScrapper/obj/Debug/netcoreapp3.1/WhatsappWebScrapper.csproj.CoreCompileInputs.cache
+/home/giovani/Documents/WhatsappWebScrapper/obj/Debug/netcoreapp3.1/WhatsappWebScrapper.csproj.CopyComplete
+/home/giovani/Documents/WhatsappWebScrapper/obj/Debug/netcoreapp3.1/WhatsappWebScrapper.dll
+/home/giovani/Documents/WhatsappWebScrapper/obj/Debug/netcoreapp3.1/WhatsappWebScrapper.pdb
+/home/giovani/Documents/WhatsappWebScrapper/obj/Debug/netcoreapp3.1/WhatsappWebScrapper.genruntimeconfig.cache
