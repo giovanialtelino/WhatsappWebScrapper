@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/giovani/Documents/WhatsappWebScrapper/WhatsappWebScrapper.csproj": {}
+    "/home/altrunox/Documents/WhatsappWebScrapper/WhatsappWebScrapper.csproj": {}
   },
   "projects": {
-    "/home/giovani/Documents/WhatsappWebScrapper/WhatsappWebScrapper.csproj": {
+    "/home/altrunox/Documents/WhatsappWebScrapper/WhatsappWebScrapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/giovani/Documents/WhatsappWebScrapper/WhatsappWebScrapper.csproj",
+        "projectUniqueName": "/home/altrunox/Documents/WhatsappWebScrapper/WhatsappWebScrapper.csproj",
         "projectName": "WhatsappWebScrapper",
-        "projectPath": "/home/giovani/Documents/WhatsappWebScrapper/WhatsappWebScrapper.csproj",
-        "packagesPath": "/home/giovani/.nuget/packages/",
-        "outputPath": "/home/giovani/Documents/WhatsappWebScrapper/obj/",
+        "projectPath": "/home/altrunox/Documents/WhatsappWebScrapper/WhatsappWebScrapper.csproj",
+        "packagesPath": "/home/altrunox/.nuget/packages/",
+        "outputPath": "/home/altrunox/Documents/WhatsappWebScrapper/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/giovani/.nuget/NuGet/NuGet.Config"
+          "/home/altrunox/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -36,10 +36,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "AngleSharp": {
-              "target": "Package",
-              "version": "[1.0.0-alpha-827, )"
-            },
             "Selenium.WebDriver": {
               "target": "Package",
               "version": "[4.0.0-alpha05, )"
@@ -60,7 +56,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
         }
       }
     }
