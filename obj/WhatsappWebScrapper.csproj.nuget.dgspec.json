@@ -36,9 +36,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "AngleSharp": {
+            "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[1.0.0-alpha-827, )"
+              "version": "[12.0.2, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
         }
       }
     }

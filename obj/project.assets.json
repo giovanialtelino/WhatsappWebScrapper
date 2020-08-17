@@ -2,27 +2,6 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "AngleSharp/1.0.0-alpha-827": {
-        "type": "package",
-        "dependencies": {
-          "System.Text.Encoding.CodePages": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/AngleSharp.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/AngleSharp.dll": {}
-        }
-      },
-      "Microsoft.NETCore.Platforms/2.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.0/_._": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/_._": {}
-        }
-      },
       "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
@@ -43,76 +22,10 @@
         "runtime": {
           "lib/netstandard2.0/WebDriver.dll": {}
         }
-      },
-      "System.Runtime.CompilerServices.Unsafe/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        }
-      },
-      "System.Text.Encoding.CodePages/4.5.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "2.0.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.0"
-        },
-        "compile": {
-          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
       }
     }
   },
   "libraries": {
-    "AngleSharp/1.0.0-alpha-827": {
-      "sha512": "y4qtLFT2FUd+qaCRuqW8MRJdvRZLt8DhOcNk4Zye4CZxDnhb19f9c+3ry2Pe1H1eW33SFGQS1cRFi3mSi9ftDQ==",
-      "type": "package",
-      "path": "anglesharp/1.0.0-alpha-827",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "anglesharp.1.0.0-alpha-827.nupkg.sha512",
-        "anglesharp.nuspec",
-        "lib/net46/AngleSharp.dll",
-        "lib/net46/AngleSharp.xml",
-        "lib/net461/AngleSharp.dll",
-        "lib/net461/AngleSharp.xml",
-        "lib/net472/AngleSharp.dll",
-        "lib/net472/AngleSharp.xml",
-        "lib/netstandard1.3/AngleSharp.dll",
-        "lib/netstandard1.3/AngleSharp.xml",
-        "lib/netstandard2.0/AngleSharp.dll",
-        "lib/netstandard2.0/AngleSharp.xml"
-      ]
-    },
-    "Microsoft.NETCore.Platforms/2.0.0": {
-      "sha512": "VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
-      "type": "package",
-      "path": "microsoft.netcore.platforms/2.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.2.0.0.nupkg.sha512",
-        "microsoft.netcore.platforms.nuspec",
-        "runtime.json",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "Newtonsoft.Json/12.0.2": {
       "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "type": "package",
@@ -160,86 +73,11 @@
         "selenium.webdriver.4.0.0-alpha05.nupkg.sha512",
         "selenium.webdriver.nuspec"
       ]
-    },
-    "System.Runtime.CompilerServices.Unsafe/4.5.0": {
-      "sha512": "YrzNWduCDHhUaSRBxHxL11UkM2fD6y8hITHis4/LbQZ6vj3vdRjoH3IoPWWC9uDXK2wHIqn+b5gv1Np/VKyM1g==",
-      "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/uap10.0.16300/_._",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/uap10.0.16300/_._",
-        "system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
-        "system.runtime.compilerservices.unsafe.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Text.Encoding.CodePages/4.5.0": {
-      "sha512": "S0wEUiKcLvRlkFUXca8uio1UQ5bYQzYgOmOKtCqaBQC3GR9AJjh43otcM32IGsAyvadFTaAMw9Irm6dS4Evfng==",
-      "type": "package",
-      "path": "system.text.encoding.codepages/4.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Text.Encoding.CodePages.dll",
-        "lib/net461/System.Text.Encoding.CodePages.dll",
-        "lib/netstandard1.3/System.Text.Encoding.CodePages.dll",
-        "lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/netstandard1.3/System.Text.Encoding.CodePages.dll",
-        "ref/netstandard1.3/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/de/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/es/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/fr/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/it/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/ja/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/ko/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/ru/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/zh-hans/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard1.3/zh-hant/System.Text.Encoding.CodePages.xml",
-        "ref/netstandard2.0/System.Text.Encoding.CodePages.dll",
-        "ref/netstandard2.0/System.Text.Encoding.CodePages.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/win/lib/net461/System.Text.Encoding.CodePages.dll",
-        "runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll",
-        "runtimes/win/lib/netstandard1.3/System.Text.Encoding.CodePages.dll",
-        "runtimes/win/lib/netstandard2.0/System.Text.Encoding.CodePages.dll",
-        "system.text.encoding.codepages.4.5.0.nupkg.sha512",
-        "system.text.encoding.codepages.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "AngleSharp >= 1.0.0-alpha-827",
+      "Newtonsoft.Json >= 12.0.2",
       "Selenium.WebDriver >= 4.0.0-alpha05"
     ]
   },
@@ -278,9 +116,9 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
-          "AngleSharp": {
+          "Newtonsoft.Json": {
             "target": "Package",
-            "version": "[1.0.0-alpha-827, )"
+            "version": "[12.0.2, )"
           },
           "Selenium.WebDriver": {
             "target": "Package",
@@ -302,7 +140,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
       }
     }
   }
