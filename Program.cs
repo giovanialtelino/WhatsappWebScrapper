@@ -6,27 +6,59 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
+using System.Text.Json;
+using System.IO;
 
 namespace WhatsappWebScrapper
 {
     class Program
     {
-        static public string NameExtractor(IWebElement element)
+        static List<Chat> ExtractCurrentNames(IWebDriver d)
         {
-            ///html/body/div[1]/div/div/div[3]/div/div[2]/div[1]/div/div/div[15]/div/div/div[2]/div[1]/div[1]/span/span
-            var name = element.FindElement(By.XPath("/html/body/div[1]/div/div/div[3]/div/div[2]/div[1]/div/div/div[15]/div/div/div[2]/div[1]/div[1]/span/span"));
+            var tempList = new List<Chat>();
+            var step1 = d.FindElements(By.CssSelector("div[class='_3CneP']"));
 
-            System.Console.WriteLine(name);
+            foreach (var item in step1)
+            {
+                var step2 = item.FindElement(By.CssSelector("span[class='_3ko75 _5h6Y_ _3Whw5']"));
+                var tempChat = new Chat(step2.Text);
+                step2.Click();
 
-            return name.Text;
+                Thread.Sleep(TimeSpan.FromSeconds(5));
+                var chat = ExtractCurrentChat(d);
+                tempChat.AddMessages(chat);
+
+                tempList.Add(tempChat);
+            }
+            return tempList;
         }
 
-        static public List<string> ListNameExtractor(ICollection<IWebElement> elements)
+        static List<ChatMessages> ExtractCurrentChat(IWebDriver d)
         {
-            var tempList = new List<String>();
-            foreach (var item in elements)
+            var tempList = new List<ChatMessages>();
+            var step1 = d.FindElements(By.CssSelector("div._2hqOq.message-in.focusable-list-item"));
+            foreach (var item in step1)
             {
-                tempList.Add(NameExtractor(item));
+                if (item.FindElements(By.CssSelector("div[class*='copyable-text']")).Count > 0)
+                {
+                    var step2 = item.FindElement(By.CssSelector("div[class*='copyable-text']"));
+                    var nameAndTime = step2.GetAttribute("data-pre-plain-text").ToString().Split("]");
+                    if (item.FindElements(By.CssSelector("div[class*='eRacY']")).Count > 0)
+                    {
+                        if (item.FindElement(By.CssSelector("div[class='eRacY']")).FindElements(By.CssSelector("span[class*='_3Whw5']")).Count > 0)
+                        {
+                            var message = step2.FindElement(By.CssSelector("div[class='eRacY']")).FindElement(By.CssSelector("span[class*='_3Whw5']")).Text;
+                            var name = nameAndTime[0];
+                            var time = nameAndTime[1];
+                            System.Console.WriteLine("--------");
+                            System.Console.WriteLine(nameAndTime[0]);
+                            System.Console.WriteLine(nameAndTime[1]);
+                            System.Console.WriteLine(message);
+                            System.Console.WriteLine("--------");
+                            tempList.Add(new ChatMessages(name, message, time));
+                        }
+                    }
+                }
             }
             return tempList;
         }
@@ -37,74 +69,56 @@ namespace WhatsappWebScrapper
 
             using (IWebDriver driver = new FirefoxDriver())
             {
-                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
+                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1);
 
                 driver.Navigate().GoToUrl("https://web.whatsapp.com/");
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
 
                 Console.Write("Login and press enter");
                 Console.ReadKey();
 
-                var listNamesString = new List<string>();
-
-                var listNames = driver.FindElements(By.ClassName("_210SC"));
-                listNamesString.AddRange(ListNameExtractor(listNames));
-                var elementToScrollDown = driver.FindElement(By.ClassName("_3R02z"));
+                var namesList = new List<Chat>();
+                namesList.AddRange(ExtractCurrentNames(driver));
 
 
                 var newElements = true;
                 while (newElements)
                 {
+                    var elementToScrollDown = driver.FindElement(By.ClassName("_3R02z"));
                     newElements = false;
                     elementToScrollDown.SendKeys(Keys.PageDown);
-                    Thread.Sleep(TimeSpan.FromSeconds(10));
-                    var tempLisNames = driver.FindElements(By.ClassName("_210SC"));
-                    var tempListNamesString = ListNameExtractor(tempLisNames);
+                    Thread.Sleep(TimeSpan.FromSeconds(1));
+                    var tempListNamesString = ExtractCurrentNames(driver);
 
                     foreach (var item in tempListNamesString)
                     {
-                        if (listNamesString.Contains(item) == false)
+                        if (namesList.Contains(item) == false)
                         {
                             newElements = true;
-                            listNamesString.Add(item);
+                            namesList.Add(item);
                         }
                     }
                 }
 
-                System.Console.WriteLine("-----");
-                System.Console.WriteLine(listNamesString.Count);
-                foreach (var item in listNamesString)
+                var resultFile = String.Concat(Directory.GetCurrentDirectory(), "/whatsapp.json");
+
+                using (var outputFile = new StreamWriter(resultFile))
                 {
-                    System.Console.WriteLine(item);
+                    outputFile.Write("[");
+
+                    for (int i = 0; i < namesList.Count - 2; i++)
+                    {
+                        outputFile.Write(JsonSerializer.Serialize(namesList[i]));
+                        outputFile.Write(", ");
+                    }
+
+                    var finalChat = namesList[namesList.Count - 1];
+                    outputFile.Write(JsonSerializer.Serialize(finalChat));
+
+                    outputFile.Write("]");
+
                 }
-                System.Console.WriteLine("------");
 
-                // foreach (var item in listNames)
-                // {
-                //     var name = item.FindElement(By.ClassName("_357i8"));
-
-                //     item.Click();
-
-                //     var messages = item.FindElements(By.ClassName("_2hqOq"));
-                //     var toScroll = item.FindElement(By.ClassName("_2-aNW"));
-
-                //     var actions = new Actions(driver);
-
-                //     for (int i = 0; i < 50; i++)
-                //     {
-                //         actions.MoveByOffset(0,0);
-                //     }
-                //     actions.MoveByOffset(0,0);
-
-                //     foreach (var message in messages)
-                //     {
-                //         var text = message.FindElement(By.ClassName("copyable-text"));
-                //         var data = text.GetAttribute("data-pre-plain-text");
-
-                //         System.Console.WriteLine(text.Text);
-                //         System.Console.WriteLine(data);
-                //     }
-                // }
             }
         }
     }
